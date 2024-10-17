@@ -12,6 +12,8 @@ const controlBtn = document.getElementById('control');
 const resetBtn = document.getElementById('reset');
 const heading = document.querySelector('h1'); // Heading for the status
 const progressBar = document.getElementById('progress-bar'); 
+const skipBtn = document.getElementById('skip');
+const endSound = document.getElementById("timer-end-sound");
 
 function updateTimerDisplay() {
     const minutes = Math.floor(timer / 60);
@@ -65,7 +67,20 @@ function resetTimer() {
     cycleCount = 0; // Reset cycle count
 }
 
+function skipCycle() {
+    clearInterval(interval); // Stop the current timer
+    
+    handleCycleEnd(); // Skip to the next phase (work/break)
+    
+    // Update the timer display immediately to show the new phase
+    updateTimerDisplay();
+    updateProgressBar();
+}
+
 function handleCycleEnd() {
+    endSound.play();
+    alert('Time’s up!');
+    
     cycleCount++;
     if (cycleCount % 4 === 0) {
         timer = longBreakTime;
@@ -96,5 +111,6 @@ function updateProgressBar() {
 */
 controlBtn.addEventListener('click', handleControlButton);
 resetBtn.addEventListener('click', resetTimer);
+skipBtn.addEventListener('click', skipCycle);
 
 updateTimerDisplay(); // Initial display
