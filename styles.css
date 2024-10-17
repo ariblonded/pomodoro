@@ -57,13 +57,13 @@ button {
     background-color: #24507b;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 15px 30px;
     font-size: 18px;
     margin: 10px 0; /* Adjust margin for vertical spacing */
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Set static width for buttons */
+    width: 50%; /* Set static width for buttons */
 }
 
 button:hover {
@@ -74,7 +74,7 @@ button:active {
     background-color: #1c6ca1;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design for Mobile */ /*
 @media (max-width: 600px) {
     #timer-display {
         font-size: 48px;
@@ -84,4 +84,4 @@ button:active {
         padding: 12px 24px;
         font-size: 16px;
     }
-}
+}*/
